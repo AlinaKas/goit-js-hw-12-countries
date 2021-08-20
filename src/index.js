@@ -24,14 +24,12 @@ function onSearch(e) {
 
     API.fetchCountries(searchQuery).then(renderCountryCard)
         .catch(onFetchError)
-        .finally(refs.input.value = '')
 };
 
 function renderCountryCard(country) {
     const markup = countryCardTpl(country);
     refs.container.innerHTML = markup;
-    // refs.input.value = '';
-// console.log(country.status);
+    refs.input.value = '';
 
     if (country.status === 404 || country.length > 10) {
         refs.container.innerHTML = '';
@@ -42,9 +40,7 @@ function renderCountryCard(country) {
     if (country.length >= 2 && country.length <= 10) {
     const markupList = countriesList(country);
         refs.container.innerHTML = markupList;
-
     return;
-
   }
 };
 
