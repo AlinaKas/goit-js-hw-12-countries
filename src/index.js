@@ -30,10 +30,6 @@ function onSearch(e) {
 };
 
 function renderCountryCard(country) {
-    const markup = countryCardTpl(country);
-    refs.container.innerHTML = markup;
-    // refs.input.value = '';
-
     if (country.status === 404) {
         refs.container.innerHTML = '';
     onFetchError();
@@ -51,6 +47,10 @@ function renderCountryCard(country) {
         refs.container.innerHTML = markupList;
     return;
     }
+
+    const markup = countryCardTpl(country);
+    refs.container.innerHTML = markup;
+    // refs.input.value = '';
 };
 
 function onFetchError() {
