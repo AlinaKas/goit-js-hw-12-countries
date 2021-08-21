@@ -29,7 +29,7 @@ function onSearch(e) {
 function renderCountryCard(country) {
     const markup = countryCardTpl(country);
     refs.container.innerHTML = markup;
-    refs.input.value = '';
+    // refs.input.value = '';
 
     if (country.status === 404 || country.length > 10) {
         refs.container.innerHTML = '';
@@ -46,8 +46,8 @@ function renderCountryCard(country) {
 
 function onFetchError() {
     error({
-    title: 'Too many matches found.',
-        text: 'Please enter a more specific query!',
+        title: 'TRY AGAIN!',
+        text: 'Too many matches found.Please enter a more specific query!',
         delay: 3000,
   })
 };
