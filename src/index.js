@@ -1,5 +1,6 @@
 import './sass/main.scss'
 import API from './js/fetchCountries'
+import getRefs from './js/getRefs'
 import countriesList from './templates/countriesList.hbs'
 import countryCardTpl from './templates/cardMarkup.hbs'
 
@@ -10,10 +11,7 @@ import { error } from '@pnotify/core';
 import debounce from 'lodash.debounce';
 
 
-const refs = {
-    container: document.querySelector('.container'),
-    input: document.querySelector('#search'),
-};
+const refs = getRefs();
 
 refs.input.addEventListener('input', debounce(onSearch, 500));
 
@@ -21,7 +19,10 @@ function onSearch(e) {
     e.preventDefault();
     const searchQuery = e.target.value;
     // const searchQuery = refs.input.value;
-
+    if (!searchQuery) {
+        refs.container.innerHTML = '';
+        return;
+  }
     API.fetchCountries(searchQuery).then(renderCountryCard)
         .catch(onFetchError)
 };
@@ -41,7 +42,7 @@ function renderCountryCard(country) {
     const markupList = countriesList(country);
         refs.container.innerHTML = markupList;
     return;
-  }
+    }
 };
 
 function onFetchError() {
