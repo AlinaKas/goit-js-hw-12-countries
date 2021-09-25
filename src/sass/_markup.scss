@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 30px;
   font-family: Roboto;
-  font-size: 50px;
+  font-size: 30px;
   background-color: #9bcae0;
   color: #000000;
 }
@@ -26,13 +26,13 @@ p {
 
 ul {
   padding: 0;
-  padding-left: 60px;
+  padding-left: 40px;
   margin: 0;
 }
 
 .title {
   margin-bottom: 20px;
-  font-size: 80px;
+  font-size: 40px;
   text-transform: uppercase;
   color: #ffffff;
   text-shadow: 2px 2px 4px black;
@@ -48,7 +48,7 @@ ul {
 }
 
 .img-wrap {
-  margin-left: 60px;
+  margin-left: 40px;
 }
 
 input {
@@ -56,9 +56,9 @@ input {
   padding-right: 15px;
   margin-bottom: 35px;
   font-family: Roboto;
-  font-size: 40px;
-  min-width: 600px;
-  height: 100px;
+  font-size: 30px;
+  min-width: 500px;
+  height: 60px;
   border-radius: 10px;
   outline-color: black;
   box-shadow: 2px 2px 2px rgb(68, 66, 66);
@@ -66,7 +66,7 @@ input {
 
 .card-title {
   margin-top: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   color: #ffffff;
   text-shadow: 2px 2px 4px black;
 }
